@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfda4k3uqmfc8"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_2srxr"]
+[ext_resource type="Texture2D" uid="uid://bdtegenmnjitn" path="res://pongBall.png" id="1_6edf1"]
+[ext_resource type="AudioStream" uid="uid://d0b6w3k20bsnw" path="res://soccer-ball-kick-37625.mp3" id="3_gymlc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3blhm"]
+radius = 32.0
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_2srxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 13)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6edf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3blhm")
+
+[node name="CollideAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gymlc")
